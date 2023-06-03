@@ -15,14 +15,15 @@
     font-family: louisgeorge;
 }
 
-.navbar{
-    background-color: #997667; 
+.navbar {
+    background-color: #997667;
 }
 
-.jumbotron{
+
+.jumbotron {
     background-image: url(../imagenes/jumbotron.jpg);
     width: 100%;
-    height:100vh;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     margin-bottom: 0;
@@ -72,6 +73,7 @@ footer {
 .redes a img {
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -79,76 +81,23 @@ footer {
     font-size: 25px;
 }
 
-.contenedor{
-    background-color: #4D2C26;
-    width: 100%;
-    min-height: 500px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 140px);
-    padding: 20px;
-    grid-gap: 10px;
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.nosotros {
+    margin-top: 20px;
+    display: flex;
     justify-content: center;
-    align-content: center;
 }
 
-.item{
-    border: 5px solid;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    transition: all 0.9s;
-    filter: sepia(100%);
-}
-
-.item:hover{
-    transform: scale(1.09);
-    transition: all 0.9s;
-    filter: sepia(0%);
-}
-
-.item1{
-    grid-area: portada;
-    background-image: url(../grids/portada.jpg);
-    grid-column: 1/5;
-    grid-row: 1/3;
-}
-.item2{
-    grid-area: juguete;
-    background-image: url(../grids/juguete.jpg);
-    grid-column: 1/2;
-    grid-row: 3/5;
-}
-.item3{
-    grid-area: gato;
-    background-image: url(../grids/gato.jpg);
-    grid-column: 2/3;
-    grid-row: 3/4;
-}
-.item4{
-    grid-area: perro;
-    background-image: url(../grids/perro.jpg);
-    grid-column: 3/4;
-    grid-row: 3/4;
-}
-.item5{
-    grid-area: producto;
-    background-image: url(../grids/producto.jpg);
-    grid-column: 4/5;
-    grid-row: 3/5;
-}
-.item6{
-    grid-area: cobayo;
-    background-image: url(../grids/cobayo.jpg);
-    grid-column: 2/3;
-    grid-row: 4/5;
-}
-.item7{
-    grid-area: conejo;
-    background-image: url(../grids/conejo.jpg);
-    grid-column: 3/4;
-    grid-row: 4/5;
-}
 .texto-nosotros {
     color: #fff;
     width: 90%;
@@ -156,53 +105,228 @@ footer {
     border: 5px solid black;
     padding: 20px;
     text-align: center;
-    float: right;
 }
 
-.video-nosotros {
-    width: 700px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    float: none;
+.carousel {
+    width: 100%;
+    margin-top: 20px;
 }
 
-.alimento {
+.productos {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    justify-content: space-evenly;
 }
 
 .producto {
-    flex-basis: calc(50% - 5px);
-    margin-bottom: 10px;
-    padding: 10px;
-    box-sizing: border-box;
-    color: #fff;
+    width: 250px;
+    min-height: 350px;
     background-color: #4D2C26;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    margin-right: 10px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 7px;
 }
 
-.producto:nth-child(2n) {
-    margin-right: 0;
+.producto:hover {
+    box-shadow: 0 0 5px 5px #000;
+    transform: scale(1.09);
+    transition: all 1.1s;
+
+
+}
+
+.producto-img1 {
+    background-image: url(../imagenes/alimentoperro.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+}
+
+.producto-img2 {
+    background-image: url(../imagenes/alimentogato.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+}
+
+.producto-img3 {
+    background-image: url(../imagenes/ropa.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+}
+
+.producto-img4 {
+    background-image: url(../imagenes/juguete.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
 }
 
 
+.producto-nombre {
+    font-size: 30px;
+    color: #f5f5dc;
+    text-shadow: 2px 2px 5px #000;
+}
 
-.horarios {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    box-sizing: border-box;
+.producto p {
+    padding: 20px;
+    font-weight: 600;
+    color: white
+}
+
+@media (max-width: 767px) {
+    .productos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .producto {
+        margin-bottom: 20px;
+    }
+}
+
+    @media (max-width: 1023px) {
+        .productos {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+
+
+.formulario {
+    background-color: #fff;
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    padding: 4.5em 3em;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
     text-align: center;
 }
 
+.form-titulo {
+    font-size: 2rem;
+    margin-bottom: 5em;
+}
+
+.form-p {
+    font-weight: 300;
+}
+
+.form-container {
+    margin-top: 3em;
+    display: grid;
+    gap: 2, 5em;
+}
+
+.form-group {
+    position: relative;
+    --color: #5757577e;
+}
+
+.form-input {
+    width: 100%;
+    background: none;
+    color: #706c6c;
+    font-size: 1rem;
+    padding: .6em .3em;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--color);
+}
+
+.form-input:not(:placeholder-shown) {
+    color: #4d4646;
+}
+
+.form-input:focus+.form-label,
+.form-input:not(:placeholder-shown)+.form-label {
+    transform: translateY(-12px) scale(.7);
+    transform-origin: left top;
+    color: #4D2C26;
+}
+
+.form-label {
+    color: var(--color);
+    cursor: pointer;
+    position: absolute;
+    top: 0%;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+}
+
+.form-submit {
+    background: #4D2C26;
+    color: #fff;
+    font-weight: 300;
+    font-size: 1rem;
+    padding: .8em 0;
+    border: none;
+    border-radius: .5em;
+}
+
+.form-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #4D2C26;
+    transform: scale(0);
+    transform: left bottom;
+    transition: transform .4s;
+}
+
+.form-input:focus~.form-label,
+.form-input:not(:placeholder-shown)~.form-label {
+    transform: scale(1);
+}
+
+@media (max-width:425px) {
+
+    .form-titulo {
+        font-size: 1.8rem;
+    }
+
+}
+
+.uyh {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Ajusta la altura según tus necesidades */
+}
+
+.horarios {
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .ubicacion {
-    float: right;
-    width: 50%;
+    margin: 20px;
+    text-align: center;
+}
+
+.ubicacion iframe {
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    /* Ajusta el tamaño máximo según tus necesidades */
+}
+
+
+.horarios,
+.ubicacion {
+    margin: 20px;
+    text-align: center;
 }
 
 table {
@@ -210,7 +334,8 @@ table {
     border: 4px solid black;
 }
 
-th, td {
+th,
+td {
     border: 4px solid black;
     padding: 10px;
 }
@@ -226,4 +351,15 @@ fieldset label,
 fieldset input {
     margin-bottom: 10px;
 }
+
+@media (max-width: 767px) {
+    .container {
+        padding: 10px;
+    }
+
+    .horarios {
+        margin: 10px;
+    }
+}
+
 
